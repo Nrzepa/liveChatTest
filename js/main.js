@@ -32,6 +32,8 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             console.error('Error:', error);
         });
 
+        accessToken = fetchData['access_token'];
+
       fetch(
         'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
         {
@@ -40,7 +42,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json',
             },
-            body: `access_token=${fetchData['access_token']}, lightning_out_app_id=1Usd100000004rdCAA`,
+            body: `access_token=${accessToken}, lightning_out_app_id=1Usd100000004rdCAA`,
         }
     )
         .then((response) => {
