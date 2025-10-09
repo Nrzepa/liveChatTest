@@ -17,20 +17,19 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         }
     )
         .then((response) => {
-            console.log('response: ' + response);
+            console.log('response: ' + JSON.stringify(response));
             console.log('Status:', response.status);
             return response.json();
         })
         .then((data) => {
-            fetchData = JSON.parse(data);
+            fetchData = data;
             console.log('Success:', data);
         })
         .catch((error) => {
             console.error('Error:', error);
-            console.log(error.body);
         });
 
-      console.log('fetchData:', JSON.stringify(fetchData));
+      console.log('fetchData:', fetchData);
     //   console.log('fetchData[access_token]:', fetchData[access_token]);
     //   accessToken = fetchData[access_token];
     //   console.log('accessToken:', accessToken);
