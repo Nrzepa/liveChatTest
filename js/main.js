@@ -6,7 +6,7 @@ fetch(
 			'Content-Type': 'application/x-www-form-urlencoded',
 			'Accept': 'application/json',
 		},
-		body: 'access_token=00Dd1000006nBdB!AQEAQEi9IVSaodCcGJAWv2QLEv9gFLL3wyH1MYUCIJ.ooqWOopR5YYgsA3TvnD9K60fQsAooVyu1wcsq5ht9zEKbMDDrfs.L, lightning_out_app_id=1Usd100000004rdCAA',
+		body: 'access_token=00Dd1000006nBdB!AQEAQEi9IVSaodCcGJAWv2QLEv9gFLL3wyH1MYUCIJ.ooqWOopR5YYgsA3TvnD9K60fQsAooVyu1wcsq5ht9zEKbMDDrfs.L&lightning_out_app_id=1Usd100000004rdCAA',
 	}
 )
 	.then((response) => {
