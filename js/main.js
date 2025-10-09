@@ -4,6 +4,9 @@ document.getElementById('connection-btn').addEventListener('click', function() {
       clientId = document.getElementById('client-id').value;
       clientSecret = document.getElementById('client-secret').value;
 
+      console.log('clientId: ' + clientId);
+      console.log('clientSecret: ' + clientSecret);
+
       fetch(
         'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
         {
@@ -12,6 +15,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         }
     )
         .then((response) => {
+            console.log('response: ' + response);
             console.log('Status:', response.status);
             return response.json();
         })
