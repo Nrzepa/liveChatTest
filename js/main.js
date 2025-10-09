@@ -32,7 +32,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             console.error('Error:', error);
         });
 
-        accessToken = fetchData['access_token'];
+        accessToken = fetchData.access_token;
 
       fetch(
         'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
