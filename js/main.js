@@ -1,5 +1,6 @@
 var clientId;
 var clientSecret;
+var fetchData;
 var accessToken;
 document.getElementById('connection-btn').addEventListener('click', function() {
       clientId = document.getElementById('client-id').value;
@@ -21,7 +22,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             return response.json();
         })
         .then((data) => {
-            accessToken = data.access_token;
+            fetchData = data;
             console.log('Success:', data);
         })
         .catch((error) => {
@@ -29,8 +30,10 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             console.log(error.body);
         });
 
-      console.log('data:', JSON.stringify(data));
-      console.log('data.access_token:', data.access_token);
+      console.log('fetchData:', JSON.stringify(fetchData));
+      console.log('fetchData.access_token:', fetchData.access_token);
+      console.log('fetchData[access_token]:', fetchData[access_token]);
+      accessToken = fetchData[access_token];
       console.log('accessToken:', accessToken);
 
       fetch(
