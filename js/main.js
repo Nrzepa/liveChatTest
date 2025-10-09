@@ -26,13 +26,12 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         })
         .then((data) => {
             fetchData = data;
+            accessToken = fetchData.access_token;
             console.log('Success:', data);
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-
-        accessToken = fetchData.access_token;
 
       fetch(
         'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
