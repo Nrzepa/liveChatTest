@@ -31,7 +31,6 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         });
 
       console.log('fetchData:', JSON.stringify(fetchData));
-      console.log('fetchData.access_token:', fetchData.access_token);
       console.log('fetchData[access_token]:', fetchData[access_token]);
       accessToken = fetchData[access_token];
       console.log('accessToken:', accessToken);
