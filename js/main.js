@@ -22,7 +22,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             return response.json();
         })
         .then((data) => {
-            fetchData = data;
+            fetchData = JSON.parse(data);
             console.log('Success:', data);
         })
         .catch((error) => {
@@ -31,9 +31,9 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         });
 
       console.log('fetchData:', JSON.stringify(fetchData));
-      console.log('fetchData[access_token]:', fetchData[access_token]);
-      accessToken = fetchData[access_token];
-      console.log('accessToken:', accessToken);
+    //   console.log('fetchData[access_token]:', fetchData[access_token]);
+    //   accessToken = fetchData[access_token];
+    //   console.log('accessToken:', accessToken);
 
       fetch(
         'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
