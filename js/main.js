@@ -63,6 +63,5 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     console.log(error.body);
                 });
       }
-
       run();
     });
