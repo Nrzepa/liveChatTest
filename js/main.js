@@ -33,26 +33,27 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             console.error('Error:', error);
         });
 
-      fetch(
-        'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json',
-            },
-            body: `access_token=${accessToken}, lightning_out_app_id=1Usd100000004rdCAA`,
-        }
-    )
-        .then((response) => {
-            console.log('Status:', response.status);
-            return response.json();
-        })
-        .then((data) => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            console.log(error.body);
-        });
+        setTimeout(
+            fetch(
+              'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
+              {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded',
+                      'Accept': 'application/json',
+                  },
+                  body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
+              }
+          )
+              .then((response) => {
+                  console.log('Status:', response.status);
+                  return response.json();
+              })
+              .then((data) => {
+                  console.log('Success:', data);
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+                  console.log(error.body);
+              }), 3000);
     });
