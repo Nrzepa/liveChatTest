@@ -13,6 +13,9 @@ document.getElementById('connection-btn').addEventListener('click', function() {
         'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
         {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
         }
     )
