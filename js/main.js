@@ -16,5 +16,6 @@ fetch(
 		console.log('Success:', data);
 	})
 	.catch((error) => {
+		console.log(error.body);
 		console.error('Error:', error);
 	});
