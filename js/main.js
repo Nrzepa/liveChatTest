@@ -41,7 +41,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
             await sleep(3000);
 
             fetch(
-                'https://beyond-connect-uat.salesforce.com/services/oauth2/lightningoutsingleaccess',
+                'https://beyond-connect-uat.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
                 {
                     method: 'POST',
                     headers: {
