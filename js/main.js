@@ -9,50 +9,38 @@ document.getElementById('connection-btn').addEventListener('click', function() {
       console.log('clientId: ' + clientId);
       console.log('clientSecret: ' + clientSecret);
 
-      function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-      }
-
-      async function run() {
-        fetch(
-            'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
-            }
-        )
-            .then((response) => {
-                console.log('response: ' + JSON.stringify(response));
-                console.log('Status:', response.status);
-                return response.json();
-            })
-            .then((data) => {
-                fetchData = data;
-                accessToken = fetchData.access_token;
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-
-            await sleep(3000);
-
+    fetch(
+        'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
+        {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
+        }
+    )
+        .then((response) => {
+            console.log('response: ' + JSON.stringify(response));
+            console.log('Status:', response.status);
+            return response.json();
+        })
+        .then((data) => {
+            fetchData = data;
+            accessToken = fetchData.access_token;
+            console.log('Success:', data);
             fetch(
                 'https://beyond-connect-uat.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
                 {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        "Content-Type": "application/x-www-form-urlencoded",
                     },
                     body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
                 }
             )
                 .then((response) => {
                     console.log('Status:', response.status);
-                    return response.json();
+                    // return response.json();
                 })
                 .then((data) => {
                     console.log('Success:', data);
@@ -61,6 +49,8 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     console.error('Error:', error);
                     console.log(error.body);
                 });
-      }
-      run();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     });
