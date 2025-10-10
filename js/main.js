@@ -46,7 +46,6 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
-                        'Accept': 'application/json',
                     },
                     body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
                 }
