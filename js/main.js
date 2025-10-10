@@ -3,6 +3,7 @@ var clientSecret;
 var fetchData;
 var accessToken;
 const searchParams = new URLSearchParams(window.location.search);
+var frontdoorUrl;
 document.getElementById('connection-btn').addEventListener('click', function() {
       clientId = document.getElementById('client-id').value;
       clientSecret = document.getElementById('client-secret').value;
@@ -42,9 +43,11 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                 )
                     .then((response) => {
                         console.log('Status:', response.status);
+                        console.log('response: ' + JSON.stringify(response));
                         return response.json();
                     })
                     .then((data) => {
+                        frontdoorUrl = data.frontdoor_uri;
                         console.log('Success:', data);
                     })
                     .catch((error) => {
