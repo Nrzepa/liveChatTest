@@ -48,6 +48,13 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     })
                     .then((data) => {
                         frontdoorUrl = data.frontdoor_uri;
+                        const loElem = document.createElement("lightning-out-application");
+                        loElem.setAttribute('components', 'c-chat-component');
+                        loElem.setAttribute('frontdoor-uri', frontdoorUrl);
+                        document.body.appendChild(loElem);
+                        const chatComponent = document.createElement("c-chat-component");
+                        document.body.appendChild(chatComponent);
+
                         console.log('Success:', data);
                     })
                     .catch((error) => {
