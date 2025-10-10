@@ -16,8 +16,8 @@
 
     <body>
         <p>Hello Front Row Viewers!</p>
-        <input type="text" id="client-id" label="Client ID">
-        <input type="text" id="client-secret" label="Client Secret">
+        <input type="text" id="client-id">
+        <input type="text" id="client-secret">
         <button class="btn" type="button" id="connection-btn">Establish connection</button>
         
 
@@ -28,7 +28,7 @@
 
         <script type="text/javascript" async="" src="https://beyond-connect-uat.my.salesforce.com/lightning/lightning.out.latest/index.iife.prod.js"></script>
 
-        <lightning-out-application components="c-chat-component"></lightning-out-application>
+        <lightning-out-application components="c-chat-component" frontdoor-url={frontdoorUrl}"></lightning-out-application>
         <c-chat-component></c-chat-component>
     </body>
 </html>
