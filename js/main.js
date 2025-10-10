@@ -42,7 +42,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                 )
                     .then((response) => {
                         console.log('Status:', response.status);
-                        // return response.json();
+                        return response.json();
                     })
                     .then((data) => {
                         console.log('Success:', data);
