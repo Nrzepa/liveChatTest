@@ -2,6 +2,7 @@ var clientId;
 var clientSecret;
 var fetchData;
 var accessToken;
+const searchParams = new URLSearchParams(window.location.search);
 document.getElementById('connection-btn').addEventListener('click', function() {
       clientId = document.getElementById('client-id').value;
       clientSecret = document.getElementById('client-secret').value;
@@ -9,48 +10,50 @@ document.getElementById('connection-btn').addEventListener('click', function() {
       console.log('clientId: ' + clientId);
       console.log('clientSecret: ' + clientSecret);
 
-    fetch(
-        'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
-        {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
-        }
-    )
-        .then((response) => {
-            console.log('response: ' + JSON.stringify(response));
-            console.log('Status:', response.status);
-            return response.json();
-        })
-        .then((data) => {
-            fetchData = data;
-            accessToken = fetchData.access_token;
-            console.log('Success:', data);
-            fetch(
-                'https://beyond-connect-uat.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
-                {
-                    method: 'POST',
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
-                }
-            )
-                .then((response) => {
-                    console.log('Status:', response.status);
-                    // return response.json();
-                })
-                .then((data) => {
-                    console.log('Success:', data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    console.log(error.body);
-                });
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    if(searchParams.has('code')) {
+        fetch(
+            'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
+            {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `grant_type=authorization_code&code=${searchParams.get('code')}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=https://nrzepa.github.io/liveChatTest`,
+            }
+        )
+            .then((response) => {
+                console.log('response: ' + JSON.stringify(response));
+                console.log('Status:', response.status);
+                return response.json();
+            })
+            .then((data) => {
+                fetchData = data;
+                accessToken = fetchData.access_token;
+                console.log('Success:', data);
+                fetch(
+                    'https://beyond-connect-uat.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
+                    {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
+                    }
+                )
+                    .then((response) => {
+                        console.log('Status:', response.status);
+                        // return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        console.log(error.body);
+                    });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
     });
