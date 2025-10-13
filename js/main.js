@@ -49,10 +49,10 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     .then((data) => {
                         frontdoorUrl = data.frontdoor_uri;
                         const loElem = document.createElement("lightning-out-application");
-                        loElem.setAttribute('components', 'c-hello-world');
+                        loElem.setAttribute('components', 'beyondconnect-chat-component');
                         loElem.setAttribute('frontdoor-url', frontdoorUrl);
                         document.body.appendChild(loElem);
-                        const chatComponent = document.createElement("c-hello-world");
+                        const chatComponent = document.createElement("beyondconnect-chat-component");
                         document.body.appendChild(chatComponent);
 
                         console.log('Success:', data);
