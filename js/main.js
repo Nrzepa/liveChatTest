@@ -13,7 +13,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
 
     if(searchParams.has('code')) {
         fetch(
-            'https://beyond-connect-uat.my.salesforce.com/services/oauth2/token',
+            'https://messenger-dev5-dev-ed.my.salesforce.com/services/oauth2/token',
             {
                 method: 'POST',
                 headers: {
@@ -32,7 +32,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                 accessToken = fetchData.access_token;
                 console.log('Success:', data);
                 fetch(
-                    'https://beyond-connect-uat.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
+                    'https://messenger-dev5-dev-ed.my.salesforce.com/services/oauth2/lightningoutsingleaccess',
                     {
                         method: 'POST',
                         headers: {
