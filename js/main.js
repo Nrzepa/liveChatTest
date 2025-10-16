@@ -38,7 +38,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         headers: {
                             "Content-Type": "application/x-www-form-urlencoded",
                         },
-                        body: `access_token=${accessToken}&lightning_out_app_id=1Usd100000004rdCAA`,
+                        body: `access_token=${accessToken}&lightning_out_app_id=1UsWy000000010vKAA`,
                     }
                 )
                     .then((response) => {
@@ -49,10 +49,10 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     .then((data) => {
                         frontdoorUrl = data.frontdoor_uri;
                         const loElem = document.createElement("lightning-out-application");
-                        loElem.setAttribute('components', 'beyondconnect-change-application-settings');
+                        loElem.setAttribute('components', 'c-external-chat');
                         loElem.setAttribute('frontdoor-url', frontdoorUrl);
                         document.body.appendChild(loElem);
-                        const chatComponent = document.createElement("beyondconnect-change-application-settings");
+                        const chatComponent = document.createElement("c-external-chat");
                         document.body.appendChild(chatComponent);
 
                         console.log('Success:', data);
