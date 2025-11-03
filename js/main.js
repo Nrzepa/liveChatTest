@@ -54,8 +54,6 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         loElem.setAttribute('frontdoor-url', frontdoorUrl);
                         document.body.appendChild(loElem);
                         const chatComponent = document.createElement("c-external-chat");
-                        chatComponent.style.height = "250px";
-                        chatComponent.style.height = "200px";
                         document.body.appendChild(chatComponent);
                         console.log('Success:', data);
                     })
