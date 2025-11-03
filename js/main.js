@@ -51,10 +51,10 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         const loElem = document.createElement("lightning-out-application");
                         loElem.setAttribute('components', 'c-external-chat');
                         loElem.setAttribute('frontdoor-url', frontdoorUrl);
-                        loElem.style.height = "250px";
-                        loElem.style.width = "200px";
                         document.body.appendChild(loElem);
                         const chatComponent = document.createElement("c-external-chat");
+                        chatComponent.style.height = "250px";
+                        chatComponent.style.height = "200px";
                         document.body.appendChild(chatComponent);
                         console.log('Success:', data);
                     })
