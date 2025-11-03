@@ -51,3 +51,8 @@
 .clearfix {
     *zoom: 1;
 }
+
+iframe {
+   height: 250px;
+   width: 200px;
+}
