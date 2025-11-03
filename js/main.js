@@ -48,7 +48,6 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                     })
                     .then((data) => {
                         frontdoorUrl = data.frontdoor_uri;
-                        const chatDiv = document.createElement("div");
                         const loElem = document.createElement("lightning-out-application");
                         loElem.setAttribute('components', 'c-external-chat');
                         loElem.setAttribute('frontdoor-url', frontdoorUrl);
