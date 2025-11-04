@@ -50,7 +50,7 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         frontdoorUrl = data.frontdoor_uri;
                         const chatDiv = document.createElement("div");
                         chatDiv.style.width = '200px';
-                        chatDiv.style.height = '240px';
+                        chatDiv.style.height = '232px';
                         chatDiv.style.border = '2px solid blue';
                         chatDiv.style.borderRadius = '1%';
                         document.body.appendChild(chatDiv);
