@@ -51,6 +51,8 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         const chatDiv = document.createElement("div");
                         chatDiv.style.width = '200px';
                         chatDiv.style.height = '232px';
+                        chatDiv.style.border = '2px solid blue';
+                        chatDiv.style.borderRadius = '1%';
                         document.body.appendChild(chatDiv);
                         const loElem = document.createElement("lightning-out-application");
                         loElem.setAttribute('components', 'c-external-chat');
