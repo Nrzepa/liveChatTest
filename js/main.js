@@ -55,6 +55,17 @@ document.getElementById('connection-btn').addEventListener('click', function() {
                         const chatComponent = document.createElement("c-external-chat");
                         document.body.appendChild(chatComponent);
                         console.log('Success:', data);
+
+                        setTimeout(() => {
+                            const iframe = document.querySelector('iframe');
+                            if (iframe) {
+                                iframe.style.width = '200px';
+                                iframe.style.height = '232px';
+                                iframe.style.border = 'none'; // optional
+                            } else {
+                                console.warn('iframe not found yet');
+                            }
+                        }, 1500);
                     })
                     .catch((error) => {
                         console.error('Error:', error);
