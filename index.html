@@ -15,7 +15,40 @@
     </head>
 
     <body>
-        <p>Hello Front Row Viewers!</p>
+        <iframe
+        src={https://messenger-dev5-dev-ed.develop.my.site.com/test/external-chat}
+        scrolling="auto"
+        frameborder="0"
+        id="AutoIframeHeight"
+        width="100%"
+        height="100%"
+      ></iframe>
+      <script type="text/javascript">
+        (window.addEventListener || window.attachEvent)(
+          window.addEventListener ? "message" : "onmessage",
+          function (e) {
+            if (e.data && "AutoIframeHeight" == e.data.name) {
+              document.getElementById(e.data.name).scrolling = "NO";
+              var t = function (t) {
+                if (e.data.value) {
+                  var n = document.getElementById(e.data.name);
+                  if (((n.height = e.data.value), e.data.scroll && !t)) {
+                    var a =
+                      n.getBoundingClientRect().top +
+                      document.documentElement.scrollTop;
+                    window.scrollTo(0, a);
+                  }
+                }
+              };
+              t(!1),
+                setTimeout(function () {
+                  t(!0);
+                }, 1e3);
+            }
+          }
+        );
+      </script>
+        <!-- <p>Hello Front Row Viewers!</p>
         <input type="text" id="client-id">
         <input type="text" id="client-secret">
         <button class="btn" type="button" id="connection-btn">Establish connection</button>
@@ -26,7 +59,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <script type="text/javascript" async="" src="https://messenger-dev5-dev-ed.develop.my.salesforce.com/lightning/lightning.out.latest/index.iife.prod.js"></script>
+        <script type="text/javascript" async="" src="https://messenger-dev5-dev-ed.develop.my.salesforce.com/lightning/lightning.out.latest/index.iife.prod.js"></script> -->
 
         <!-- <lightning-out-application components="c-chat-component" frontdoor-url={frontdoorUrl}"></lightning-out-application>
         <c-chat-component></c-chat-component> -->
