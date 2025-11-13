@@ -23,6 +23,31 @@
         width="1000px"
         height="600px"
       ></iframe>
+        <script type="text/javascript">
+        (window.addEventListener || window.attachEvent)(
+          window.addEventListener ? "message" : "onmessage",
+          function (e) {
+            if (e.data && "AutoIframeHeight" == e.data.name) {
+              document.getElementById(e.data.name).scrolling = "NO";
+              var t = function (t) {
+                if (e.data.value) {
+                  var n = document.getElementById(e.data.name);
+                  if (((n.height = e.data.value), e.data.scroll && !t)) {
+                    var a =
+                      n.getBoundingClientRect().top +
+                      document.documentElement.scrollTop;
+                    window.scrollTo(0, a);
+                  }
+                }
+              };
+              t(!1),
+                setTimeout(function () {
+                  t(!0);
+                }, 1e3);
+            }
+          }
+        );
+      </script>
         <!-- <p>Hello Front Row Viewers!</p>
         <input type="text" id="client-id">
         <input type="text" id="client-secret">
