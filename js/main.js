@@ -5,7 +5,9 @@ function toggleChat() {
     this.chatOpen = !this.chatOpen;
 }
 
-document.querySelector(".open-chat").addEventListener('click', function() {
+var btn = document.querySelector(".open-chat");
+console.log('btn: ' + btn);
+btn.addEventListener('click', function() {
     console.log('this.chatRendered before: ' + this.chatRendered);
     console.log('this.chatOpen before: ' + this.chatOpen);
     this.toggleChat();
