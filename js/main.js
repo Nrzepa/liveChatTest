@@ -15,11 +15,12 @@ btn.addEventListener('click', function() {
     console.log('this.chatOpen after: ' + chatOpen);
     if(chatRendered === false) {
         const chatDiv = document.createElement("div");
-        chatDiv.style.height = '235px';
-        chatDiv.style.width = '200px';
+        chatDiv.style.height = '270px';
+        chatDiv.style.width = '220px';
         chatDiv.style.position = 'fixed';
         chatDiv.style.bottom = '4rem';
         chatDiv.style.right = '1rem';
+        chatDiv.style.backgroundColor = 'white';
         document.body.appendChild(chatDiv);
         const iframe = document.createElement("iframe");
         iframe.setAttribute("src", "https://messenger-dev5-dev-ed.develop.my.site.com/test/external-chat");
