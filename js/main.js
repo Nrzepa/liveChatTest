@@ -8,12 +8,12 @@ function toggleChat() {
 var btn = document.querySelector('#openChatButton');
 console.log('btn: ' + btn);
 btn.addEventListener('click', function() {
-    console.log('this.chatRendered before: ' + this.chatRendered);
-    console.log('this.chatOpen before: ' + this.chatOpen);
+    console.log('this.chatRendered before: ' + chatRendered);
+    console.log('this.chatOpen before: ' + chatOpen);
     toggleChat();
-    console.log('this.chatRendered after: ' + this.chatRendered);
-    console.log('this.chatOpen after: ' + this.chatOpen);
-    if(this.chatRendered === false) {
+    console.log('this.chatRendered after: ' + chatRendered);
+    console.log('this.chatOpen after: ' + chatOpen);
+    if(chatRendered === false) {
         const chatDiv = document.createElement("div");
         chatDiv.style.height = '235px';
         chatDiv.style.width = '200px';
@@ -33,5 +33,5 @@ btn.addEventListener('click', function() {
     console.log('chatDiv: ' + chatDiv);
     console.log('iframe: ' + iframe);
     this.chatRendered = true;
-    console.log('this.chatRendered final: ' + this.chatRendered);
+    console.log('this.chatRendered final: ' + chatRendered);
 });
