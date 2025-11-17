@@ -3,6 +3,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="js/main.js"></script>
 
         <title></title>
         <meta name="description" content="">
@@ -13,14 +15,15 @@
 
     <body>
         <button class="open-chat" onclick={toggleChat}></button>
-        <iframe
-        src="https://messenger-dev5-dev-ed.develop.my.site.com/test/external-chat"
-        scrolling="no"
-        frameborder="0"
-        id="AutoIframeHeight"
-        width="1000px"
-        height="600px"
-        ></iframe>
-        <script src="js/main.js"></script>
+        <template if:true={chatOpen}>
+            <iframe
+            src="https://messenger-dev5-dev-ed.develop.my.site.com/test/external-chat"
+            scrolling="no"
+            frameborder="0"
+            id="AutoIframeHeight"
+            width="1000px"
+            height="600px"
+            ></iframe>
+        </template>
     </body>
 </html>
