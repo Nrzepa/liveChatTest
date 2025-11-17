@@ -5,8 +5,8 @@ function toggleChat() {
     this.chatOpen = !this.chatOpen;
 }
 
-document.getElementById("chatButton").addEventListener('click', function() {
-    toggleChat();
+document.getElementById('chatButton').addEventListener('click', function() {
+    this.toggleChat();
     if(this.chatRendered === false) {
         const chatDiv = document.createElement("div");
         chatDiv.style.height = '235px';
