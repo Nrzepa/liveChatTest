@@ -1,9 +1,10 @@
 var chatOpen = false;
 var chatRendered = false;
+var chatDiv = null;
+var iframe = null;
 
 function toggleChat() {
-    this.chatRendered = true;
-    this.chatOpen = !this.chatOpen;
+    chatOpen = !chatOpen;
 }
 
 var btn = document.querySelector('#openChatButton');
@@ -14,8 +15,8 @@ btn.addEventListener('click', function() {
     toggleChat();
     console.log('this.chatRendered after: ' + chatRendered);
     console.log('this.chatOpen after: ' + chatOpen);
-    if(chatRendered === false) {
-        const chatDiv = document.createElement("div");
+    if(!chatRendered) {
+        chatDiv = document.createElement("div");
         chatDiv.style.height = '270px';
         chatDiv.style.width = '220px';
         chatDiv.style.position = 'fixed';
@@ -23,7 +24,8 @@ btn.addEventListener('click', function() {
         chatDiv.style.right = '1rem';
         chatDiv.style.backgroundColor = 'white';
         document.body.appendChild(chatDiv);
-        const iframe = document.createElement("iframe");
+        
+        iframe = document.createElement("iframe");
         iframe.setAttribute("src", "https://messenger-dev5-dev-ed.develop.my.site.com/test/external-chat");
         iframe.setAttribute("scrolling", "no");
         iframe.setAttribute("frameborder", "0");
@@ -31,9 +33,15 @@ btn.addEventListener('click', function() {
         iframe.setAttribute("width", "100%");
         iframe.setAttribute("height", "100%");
         chatDiv.appendChild(iframe);
+        
+        chatRendered = true;
     }
     console.log('chatDiv: ' + chatDiv);
     console.log('iframe: ' + iframe);
-    chatRendered = true;
     console.log('this.chatRendered final: ' + chatRendered);
+    if (chatOpen) {
+        chatDiv.style.display = "block";
+    } else {
+        chatDiv.style.display = "none";
+    }
 });
