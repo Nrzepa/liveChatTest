@@ -2,6 +2,7 @@ var chatOpen = false;
 var chatRendered = false;
 
 function toggleChat() {
+    this.chatRendered = true;
     this.chatOpen = !this.chatOpen;
 }
 
