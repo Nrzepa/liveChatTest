@@ -2,3 +2,9 @@
    height: 270px;
    width: 210px;
 } */
+
+.open-chat {
+   height: 40px;
+   width: 40px;
+   border-radius: 50%;
+}
