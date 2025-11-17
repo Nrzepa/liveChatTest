@@ -6,7 +6,11 @@ function toggleChat() {
 }
 
 document.querySelector(".open-chat")?.addEventListener('click', function() {
+    console.log('this.chatRendered before: ' + this.chatRendered);
+    console.log('this.chatOpen before: ' + this.chatOpen);
     this.toggleChat();
+    console.log('this.chatRendered after: ' + this.chatRendered);
+    console.log('this.chatOpen after: ' + this.chatOpen);
     if(this.chatRendered === false) {
         const chatDiv = document.createElement("div");
         chatDiv.style.height = '235px';
@@ -24,5 +28,8 @@ document.querySelector(".open-chat")?.addEventListener('click', function() {
         iframe.setAttribute("height", "100%");
         chatDiv.appendChild(iframe);
     }
+    console.log('chatDiv: ' + chatDiv);
+    console.log('iframe: ' + iframe);
     this.chatRendered = true;
+    console.log('this.chatRendered final: ' + this.chatRendered);
 });
