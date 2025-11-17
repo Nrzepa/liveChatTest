@@ -4,7 +4,10 @@
 } */
 
 .open-chat {
-   height: 40px;
-   width: 40px;
+   position: fixed;
+   bottom: 1rem;
+   right: 1rem;
+   height: 30px;
+   width: 30px;
    border-radius: 50%;
 }
