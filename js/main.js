@@ -10,7 +10,7 @@ console.log('btn: ' + btn);
 btn.addEventListener('click', function() {
     console.log('this.chatRendered before: ' + this.chatRendered);
     console.log('this.chatOpen before: ' + this.chatOpen);
-    this.toggleChat();
+    toggleChat();
     console.log('this.chatRendered after: ' + this.chatRendered);
     console.log('this.chatOpen after: ' + this.chatOpen);
     if(this.chatRendered === false) {
