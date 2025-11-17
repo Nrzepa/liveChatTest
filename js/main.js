@@ -32,6 +32,6 @@ btn.addEventListener('click', function() {
     }
     console.log('chatDiv: ' + chatDiv);
     console.log('iframe: ' + iframe);
-    this.chatRendered = true;
+    chatRendered = true;
     console.log('this.chatRendered final: ' + chatRendered);
 });
