@@ -5,7 +5,7 @@ function toggleChat() {
     this.chatOpen = !this.chatOpen;
 }
 
-document.getElementsByClassName('open-chat')?.addEventListener('click', function() {
+document.querySelector(".open-chat")?.addEventListener('click', function() {
     this.toggleChat();
     if(this.chatRendered === false) {
         const chatDiv = document.createElement("div");
