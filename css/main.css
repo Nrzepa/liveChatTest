@@ -12,3 +12,12 @@
    border-radius: 50%;
    cursor: pointer;
 }
+
+.chat-window {
+   width: 220px;
+   height: 270px;
+   position: fixed;
+   bottom: 4rem;
+   right: 1rem;
+   background-color: white;
+}
