@@ -7,10 +7,6 @@ function toggleChat() {
     chatOpen = !chatOpen;
 }
 
-get chatClasses() {
-    return chatOpen ? 'chat-window open' : 'chat-window';
-}
-
 var btn = document.querySelector('#openChatButton');
 var chatWindow = document.querySelector('.chat-window');
 btn.addEventListener('click', function() {
@@ -19,8 +15,10 @@ btn.addEventListener('click', function() {
         chatRendered = true;
     }
     if (chatOpen) {
-        chatWindow.style.display = "block";
+        chatWindow.style.class = "chat-window open";
+        // chatWindow.style.display = "block";
     } else {
-        chatWindow.style.display = "none";
+        chatWindow.style.class = "chat-window";
+        // chatWindow.style.display = "none";
     }
 });
