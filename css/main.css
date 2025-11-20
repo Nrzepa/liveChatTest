@@ -1,7 +1,7 @@
-/* iframe {
-   height: 270px;
-   width: 210px;
-} */
+iframe {
+   border: 1px solid darkgrey;
+   border-radius: 0.3rem;
+}
 
 .open-chat {
    position: fixed;
