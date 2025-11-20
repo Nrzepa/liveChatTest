@@ -17,10 +17,8 @@ btn.addEventListener('click', function() {
     if (chatOpen) {
         // chatWindow.className = "chat-window open";
         chatWindow.classList.add("open");
-        chatWindow.style.display = "block";
     } else {
         // chatWindow.className = "chat-window";
         chatWindow.classList.remove("open");
-        chatWindow.style.display = "none";
     }
 });
