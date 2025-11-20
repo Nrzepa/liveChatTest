@@ -17,7 +17,7 @@ iframe {
 .chat-window {
    display: none;
    width: 220px;
-   height: 270px;
+   height: 260px;
    position: fixed;
    bottom: 4rem;
    right: 1rem;
