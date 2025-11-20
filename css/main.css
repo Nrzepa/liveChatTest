@@ -24,7 +24,7 @@ iframe {
    background-color: white;
 } */
 .chat-window {
-   max-height: 0;
+   height: 0;
    width: 220px;
    position: fixed;
    bottom: 4rem;
@@ -33,16 +33,14 @@ iframe {
    overflow: hidden;
    padding: 0;
    transition: 
-   max-height 0.4s ease,
+   height 0.4s ease,
    opacity 0.3s ease,
    padding 0.3s ease;
-   border: 1px solid #ccc; /* opcjonalnie */
-   border-radius: 8px;
 }
 
 /* Po otwarciu */
 .chat-window.open {
-   max-height: 260px; /* ustaw na maksymalną wysokość czatu */
+   height: 260px; /* ustaw na maksymalną wysokość czatu */
    opacity: 1;
    padding: 16px; /* tyle ile normalnie ma mieć */
 }
