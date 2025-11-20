@@ -7,6 +7,10 @@ function toggleChat() {
     chatOpen = !chatOpen;
 }
 
+get chatClasses() {
+    return chatOpen ? 'chat-window open' : 'chat-window';
+}
+
 var btn = document.querySelector('#openChatButton');
 var chatWindow = document.querySelector('.chat-window');
 btn.addEventListener('click', function() {
