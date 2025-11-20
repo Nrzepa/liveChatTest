@@ -15,10 +15,10 @@ btn.addEventListener('click', function() {
         chatRendered = true;
     }
     if (chatOpen) {
-        chatWindow.classList.add = "open";
+        chatWindow.className = "chat-window open";
         chatWindow.style.display = "block";
     } else {
-        chatWindow.classList.remove = "open";
+        chatWindow.className = "chat-window";
         chatWindow.style.display = "none";
     }
 });
