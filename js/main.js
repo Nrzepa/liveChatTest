@@ -16,9 +16,9 @@ btn.addEventListener('click', function() {
     }
     if (chatOpen) {
         chatWindow.style.class = "chat-window open";
-        // chatWindow.style.display = "block";
+        chatWindow.style.display = "block";
     } else {
         chatWindow.style.class = "chat-window";
-        // chatWindow.style.display = "none";
+        chatWindow.style.display = "none";
     }
 });
