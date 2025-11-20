@@ -8,7 +8,7 @@ function toggleChat() {
 }
 
 var btn = document.querySelector('#openChatButton');
-var chatWindow = document.querySelector('.chat-window');
+var chatWindow = document.querySelector('#chatWindow');
 btn.addEventListener('click', function() {
     toggleChat();
     if(!chatRendered) {
