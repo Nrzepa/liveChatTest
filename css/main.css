@@ -8,24 +8,15 @@ iframe {
    position: fixed;
    bottom: 1rem;
    right: 1rem;
-   height: 30px;
-   width: 30px;
+   height: 1.875rem;
+   width: 1.875rem;
    border-radius: 50%;
    cursor: pointer;
 }
 
-/* .chat-window {
-   display: none;
-   width: 220px;
-   height: 260px;
-   position: fixed;
-   bottom: 4rem;
-   right: 1rem;
-   background-color: white;
-} */
 .chat-window {
    height: 0;
-   width: 220px;
+   width: 13.75rem;
    position: fixed;
    bottom: 4rem;
    right: 1rem;
@@ -38,9 +29,8 @@ iframe {
    padding 0.6s ease;
 }
 
-/* Po otwarciu */
 .chat-window.open {
-   height: 260px; /* ustaw na maksymalną wysokość czatu */
+   height: 16.25rem;
    opacity: 1;
-   padding: 16px; /* tyle ile normalnie ma mieć */
+   padding: 1rem;
 }
