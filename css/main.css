@@ -25,6 +25,7 @@ box-shadow: 0 8px 24px rgba(108, 59, 255, 0.35) !important;
 }
 
 .chat-window.open {
+   width: 14.3rem !important;
    height: 18rem !important;
 }
 
