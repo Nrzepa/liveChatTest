@@ -23,21 +23,20 @@ box-shadow: 0 8px 24px rgba(108, 59, 255, 0.35) !important;
    transform: translateY(-3px);
    box-shadow: 0 12px 30px rgba(108, 59, 255, 0.45) !important;
 }
-.chat-window-open {
+
+.chat-window.open {
    width: 400px !important;
    height: 600px !important;
    max-width: calc(100vw - 32px) !important;
    max-height: calc(100dvh - 100px) !important;
    overflow: hidden;
    border-radius: 16px;
-}
-
-.chat-window-open iframe {
+   }
+   
+.chat-window.open iframe {
    display: block;
    width: 100% !important;
    height: 100% !important;
-   min-width: 0;
-   min-height: 0;
    border: none !important;
 }
 
